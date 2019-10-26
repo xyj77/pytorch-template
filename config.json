@@ -1,7 +1,7 @@
 {
     "name": "Mnist_LeNet",
     "n_gpu": 1,
-    
+
     "arch": {
         "type": "MnistModel",
         "args": {}
@@ -26,7 +26,7 @@
     },
     "loss": "nll_loss",
     "metrics": [
-        "my_metric", "my_metric2"
+        "accuracy", "top_k_acc"
     ],
     "lr_scheduler": {
         "type": "StepLR",
@@ -37,14 +37,14 @@
     },
     "trainer": {
         "epochs": 100,
+
         "save_dir": "saved/",
         "save_period": 1,
         "verbosity": 2,
         
         "monitor": "min val_loss",
         "early_stop": 10,
-        
-        "tensorboardX": true,
-        "log_dir": "saved/runs"
+
+        "tensorboard": true
     }
 }
